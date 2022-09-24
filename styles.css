@@ -1,0 +1,225 @@
+:root{
+    --primary-color: hsl(25, 97%, 53%);
+    --background: hsl(216, 12%, 8%);
+    --text-color: hsl(217, 12%, 63%);
+    --buttons-color: hsl(212, 14%, 21%);
+    --card-background: hsl(213, 19%, 18%);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    position: relative;
+    display: grid;
+    grid-template-columns: 37.5rem;
+    grid-template-rows: 38rem;
+    justify-content: center;
+    align-content: center;
+
+    background-color: var(--background);
+    transition: all ease-in 0.3s;
+}
+
+.result-modal{
+    position: fixed;
+    top: -100vh;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 37.5rem;
+    grid-template-rows: 38rem;
+    justify-content: center;
+    align-content: center;
+
+    background-color: var(--background);
+    transition: all ease-in 0.8s;
+}
+
+.result-modal--show{
+    top: 0;
+}
+
+.result-modal__content{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 0.8fr 0.8fr 1.2fr;
+
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem;
+
+    background-color: var(--card-background);
+    border-radius: 1.5rem;
+}
+
+.result-modal__content img{
+    align-self: center;
+
+    margin: 0 auto;
+}
+
+.result-modal__content h2{
+    align-self: center;
+    display: flex;
+    align-items: center;
+
+    padding: 0.5rem 1rem 0;
+    height: 3rem;
+    margin: 0 auto;
+
+    font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+
+    border-radius: 2rem;
+    color: var(--primary-color);
+    background-color: var(--buttons-color);
+}
+
+.result-modal__content h1{
+    align-self: center;
+    justify-self: center;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 2.6rem;
+
+    color: white;
+}
+
+.result-modal__content p{
+    align-self: center;
+
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    color: var(--text-color);
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr 0.8fr 1.2fr 1fr 1fr;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem;
+
+    border-radius: 1.5rem;
+    background-color: var(--card-background);
+}
+
+main > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 4rem;
+    height: 4rem;
+
+    background-color: var(--buttons-color);
+    background-image: url("./images/icon-star.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    border-radius: 50%;
+}
+
+main > h1{
+    padding-top: 1rem;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 2.2rem;
+
+    color: white;
+}
+
+main > p{
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    color: var(--text-color);
+}
+
+.rating{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.rating-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 4.2rem;
+    height: 4.2rem;
+    padding-top: 0.5rem;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+
+    background-color: var(--buttons-color);
+    border-radius: 50%;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all ease-in 0.2s;
+}
+
+.selected{
+    background-color: grey;
+    color: white;
+}
+
+
+.rating-button:disabled{
+    background-color: var(--text-color);
+    color: rgb(75, 75, 75);
+}
+
+main > button{
+    justify-self: center;
+
+    width: 100%;
+    height: 4.5rem;
+    padding-top: 0.5rem;
+
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+    border: none;
+    color: white;
+    transition: all ease-in 0.2s;
+    cursor: pointer;
+}
+
+main > button:disabled{
+    background-color: var(--text-color);
+    color: rgb(75, 75, 75);
+}
+
+@media (hover:hover){
+    .rating .rating-button:enabled:hover{
+        background-color: var(--primary-color);
+        color: white;        
+    }
+
+    .submit-button:enabled:hover{
+        background-color: white;
+        color: var(--primary-color);
+    }
+    
+}
